@@ -1,0 +1,37 @@
+<div class="text">
+  <h1>Finishing up</h1>
+  <p>Double-check everything looks OK before confirming</p>
+</div>
+<div class="form summary">
+  <div class="billing-summary">
+    <div class="plan-selected">
+      <div class="plan-selected-text">
+        <h3>{{formDataService.getBillingData().plan.type}}</h3>
+        <a (click)="formDataService.changeBillingType()">Change</a>
+      </div>
+      <p>
+        ${{ formDataService.getBillingData().isYearly ? formDataService.getBillingData().plan.price * 10 : formDataService.getBillingData().plan.price }}/{{
+          formDataService.getBillingData().isYearly ? "yr" : "mo"
+        }}
+      </p>
+    </div>
+    <div class="add-on-items" *ngFor="let item of addOns">
+      <p>{{ item.name }}</p>
+      <p class="price-tag">
+        ${{
+          formDataService.getBillingData().isYearly ? item.price * 10 : item.price
+        }}/{{ this.formDataService.getBillingData().isYearly ? "yr" : "mo" }}
+      </p>
+    </div>
+  </div>
+  <div class="price-summary">
+    <p>Total <span>(per month)</span></p>
+    <p class="price-tag">
+      ${{ formDataService.getBillingData().isYearly ? countTotalPrice() * 10 : countTotalPrice() }}/{{
+        formDataService.getBillingData().isYearly ? "yr" : "mo"
+      }}
+    </p>
+  </div>
+</div>
+<button class="previous-button" (click)="back()">Go Back</button>
+<button class="submit-button" (click)="submit()">Submit</button>

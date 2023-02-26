@@ -1,0 +1,42 @@
+* {
+  font-family: Ubuntu-Medium;
+  color: hsl(213, 96%, 18%);
+}
+
+.main-container {
+  padding: 16px;
+  padding-right: 0;
+  display: flex;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+  .form-container {
+    width: 400px;
+    position: relative;
+    margin: 24px 100px 16px 100px;
+
+    .finish {
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      right: 50%;
+      transform: translate(50%, -50%);
+      text-align: center;
+
+      h1 {
+
+      }
+
+      p {
+        font-family: Ubuntu-Medium;
+        font-size: 14px;
+        color: hsl(231, 11%, 63%);
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+<div class="text">
+  <h1>Select your plan</h1>
+  <p>You have the option of monthly or yearly billing</p>
+</div>
+<div class="form plan">
+  <div
+    class="plan-option"
+    *ngFor="let plan of planData; let index = index"
+    (click)="select(index)"
+    [class.selected]="formDataService.getBillingData().plan.type === plan.type"
+  >
+    <img
+      src="../../assets/images/icon-{{
+        plan.type.charAt(0).toLowerCase() + plan.type.slice(1)
+      }}.svg"
+      alt="{{ plan.type }}"
+      class="plan-img"
+    />
+    <div class="plan-text">
+      <h3>{{ plan.type }}</h3>
+      <p>${{ plan.price }}/mo</p>
+      <p class="discount" *ngIf="formDataService.getBillingData().isYearly">
+        2 months free
+      </p>
+    </div>
+  </div>
+</div>
+<div class="switch-plan">
+  <p [class.active]="!formDataService.getBillingData().isYearly">Monthly</p>
+  <label>
+    <input
+      type="checkbox"
+      (click)="formDataService.changeBillingType()"
+      [class.active]="formDataService.getBillingData().isYearly"
+    />
+    <span class="slider round"></span>
+  </label>
+  <p [class.active]="formDataService.getBillingData().isYearly">Yearly</p>
+</div>
+<button class="next-button" (click)="save()" [disabled]="!formDataService.getBillingData().plan.type">Next Step</button>
+<button class="previous-button" (click)="back()">Go Back</button>

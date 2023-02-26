@@ -1,0 +1,38 @@
+<div class="text">
+  <h1>Pick add-ons</h1>
+  <p>Add-ons help enhance your gaming experience</p>
+</div>
+<div class="form add-ons">
+  <div
+    class="add-on-option"
+    *ngFor="let addOn of formDataService.getBillingData().addOns; let index = index"
+    (click)="checkAddOn(index)"
+    [class.active]="this.formDataService.getBillingData().addOns[index].isAdded"
+  >
+    <div
+      class="add-on-img"
+      [class.active]="this.formDataService.getBillingData().addOns[index].isAdded"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="12"
+        height="9"
+        viewBox="0 0 12 12"
+      >
+        <path
+          fill="none"
+          stroke="#FFF"
+          stroke-width="2"
+          d="m1 4 3.433 3.433L10.866 1"
+        />
+      </svg>
+    </div>
+    <div class="add-on-text">
+      <h3>{{ addOn.name }}</h3>
+      <p>{{ addOn.description }}</p>
+    </div>
+    <p>+{{ formDataService.getBillingData().isYearly? addOn.price * 10 : addOn.price }}$/{{ formDataService.getBillingData().isYearly? 'yr' : 'mo' }}</p>
+  </div>
+</div>
+<button class="next-button" (click)="save()">Next Step</button>
+<button class="previous-button" (click)="back()">Go Back</button>

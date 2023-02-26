@@ -1,0 +1,51 @@
+* {
+  font-family: Ubuntu-Bold;
+}
+
+.layout {
+  width: 274px;
+  height: 568px;
+  padding-top: 16px;
+  padding-left: 10%;
+  color: hsl(0, 0%, 100%);
+  background-image: url( '../../assets/images/bg-sidebar-desktop.svg' );
+
+  .step-container {
+    margin-top: 32px;
+    display: flex;
+    align-items: center; /* center vertically */
+
+    .step-number {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      border: 1px solid white;
+      border-radius: 100%;
+      transition: background-color 0.4s ease-in-out;
+
+      &.step-active {
+        color: hsl(213, 96%, 18%);
+        background-color: hsl(228, 100%, 84%);
+        border: none;
+      }
+
+      span {
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        transform: translate(50%, -50%);
+      }
+    }
+
+    .step-text {
+      margin-left: 24px;
+
+      p {
+        font-family: Ubuntu-Regular;
+        color: hsl(229, 24%, 87%);
+        margin: 0;
+        font-size: 14px;
+      }
+    }
+  }
+}

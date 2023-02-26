@@ -1,0 +1,128 @@
+//toggle switch animation
+.plan {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  .plan-option {
+    width: 130px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: baseline;
+    border: 1px solid hsl(229, 24%, 87%);
+    border-radius: 5px;
+    cursor: pointer;
+
+    &.selected {
+      border: 1px solid hsl(243, 100%, 62%);
+      background-color: hsl(217, 100%, 97%);
+    }
+
+    plan-img {
+      width: 10px;
+      height: 10px;
+    }
+
+    .plan-text {
+      margin-top: 44px;
+
+      * {
+        margin: 0;
+      }
+
+      h3 {
+        font-family: Ubuntu-Medium;
+        font-size: medium;
+      }
+
+      p {
+        margin-top: 4px;
+        font-family: Ubuntu-Regular;
+        font-size: small;
+        color: hsl(231, 11%, 63%);
+      }
+
+      .discount {
+        font-family: Ubuntu-Medium;
+        color: hsl(213, 96%, 18%);
+        animation: append-animate 0.4s linear;
+      }
+    }
+  }
+}
+
+.switch-plan {
+  margin-top: 32px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  background-color: hsl(217, 100%, 97%);
+  border-radius: 8px;
+
+  p {
+    font-family: Ubuntu-Bold;
+    font-size: small;
+    color: hsl(231, 11%, 63%);
+
+    &.active {
+      color: hsl(213, 96%, 18%);
+    }
+  }
+
+  label {
+    display: inline-block;
+    position: relative;
+    width: 36px;
+    height: 16px;
+
+    input {
+      display: none;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: hsl(213, 96%, 18%);
+      border-radius: 25px;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+
+      &::before {
+        position: absolute;
+        content: "";
+        height: 12px;
+        width: 12px;
+        left: 2px;
+        bottom: 2px;
+        background-color: hsl(231, 100%, 99%);
+        border-radius: 100%;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+      }
+    }
+  }
+
+  input.active + .slider:before {
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+}
+
+@keyframes append-animate {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}

@@ -1,0 +1,71 @@
+.summary {
+  p,
+  a {
+    font-family: Ubuntu-Regular;
+    font-size: 14px;
+    color: hsl(231, 11%, 63%);
+  }
+  .billing-summary {
+    padding: 24px;
+    background-color: hsl(217deg, 100%, 97%);
+    border-radius: 8px;
+
+    .plan-selected {
+      padding-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid hsl(229, 24%, 87%);
+
+      * {
+        margin: 0px;
+      }
+
+      .plan-selected-text {
+        a {
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+
+      p {
+        font-family: Ubuntu-Bold;
+        color: hsl(213, 96%, 18%);
+        font-size: 16px;
+      }
+    }
+
+    .add-on-items {
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      * {
+        margin: 0px;
+      }
+
+      .price-tag {
+        font-family: Ubuntu-Medium;
+        color: hsl(213, 96%, 18%);
+      }
+    }
+  }
+
+  .price-summary {
+    padding: 32px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    * {
+      margin: 0px;
+    }
+
+    .price-tag {
+      font-family: Ubuntu-Bold;
+      color: hsl(243, 100%, 62%);
+      font-size: 18px;
+    }
+  }
+}

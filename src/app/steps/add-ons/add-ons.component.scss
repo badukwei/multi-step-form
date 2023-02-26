@@ -1,0 +1,51 @@
+.add-ons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .add-on-option {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border: 1px solid hsl(229, 24%, 87%);
+    border-radius: 8px;
+    cursor: pointer;
+
+    &.active, &:hover {
+      background-color: hsl(217, 100%, 97%);
+      border-color: hsl(243, 100%, 62%);
+    }
+
+    .add-on-img {
+      padding: 1px 4px;
+      border: 1px solid hsl(229, 24%, 87%);
+      border-radius: 5px;
+
+      &.active {
+        background-color: hsl(243, 100%, 62%);
+      }
+    }
+
+    .add-on-text {
+      margin: 0 auto 0 0;
+
+      * {
+        font-family: Ubuntu-Medium;
+        margin: 0;
+        font-size: 14px;
+      }
+
+      p {
+        color: hsl(231, 11%, 63%);
+      }
+    }
+
+    p {
+      font-family: Ubuntu-Medium;
+      margin: 0;
+      font-size: 14px;
+      color: hsl(243, 100%, 62%);
+    }
+  }
+}
