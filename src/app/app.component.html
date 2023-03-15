@@ -1,24 +1,24 @@
 <div class="main-container">
   <app-layout [step]="step"></app-layout>
   <div class="form-container">
-    <app-info *ngIf="step === 1" (onNext)="nextStep()"></app-info>
+    <app-info *ngIf="step === 1" (next)="onNext()"></app-info>
     <app-select-plan
       *ngIf="step === 2"
-      (onNext)="nextStep()"
-      (onPrevious)="previousStep()"
+      (next)="onNext()"
+      (previous)="onPrevious()"
     ></app-select-plan>
     <app-add-ons
       *ngIf="step === 3"
-      (onNext)="nextStep()"
-      (onPrevious)="previousStep()"
+      (next)="onNext()"
+      (previous)="onPrevious()"
     ></app-add-ons>
     <app-summary
       *ngIf="step === 4"
-      (onNext)="nextStep()"
-      (onPrevious)="previousStep()"
+      (next)="onNext()"
+      (previous)="onPrevious()"
     ></app-summary>
     <div class="finish" *ngIf="step === 5">
-      <img src="../assets/images/icon-thank-you.svg" />
+      <img src="../assets/images/icon-thank-you.svg" alt="thank-img"/>
       <h1>
         Thank you!
       </h1>

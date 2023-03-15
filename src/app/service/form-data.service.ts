@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
-import { BillingData } from '../model/billing-data.model';
+import { BillingData, BillingDataUpdate } from '../model/billing-data.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class FormDataService {
+  // A service that handles the state management for the multi-step form.
   billingData: BillingData = {
     info: {
       name: '',
@@ -13,7 +14,7 @@ export class FormDataService {
     },
     plan: {
       type: '',
-      price: 0
+      price: 0,
     },
     addOns: [
       {
@@ -38,18 +39,29 @@ export class FormDataService {
     isYearly: false,
   };
 
-  constructor() { }
-
+  /**
+   * Return the current billing data.
+   * @returns {BillingData} The current billing data object.
+   */
   getBillingData() {
     return this.billingData;
   }
 
-  setBillingData(stepName: keyof BillingData, data: any) {
+  /**
+   * Update a specific step's data in the billingData object.
+   * @template TStep - A keyof type representing the step name.
+   * @param {TStep} stepName - The step name in the BillingData object.
+   * @param {BillingDataUpdate[TStep]} data - The updated data for the specified step.
+   */
+  setBillingData<TStep extends keyof BillingData>(
+    stepName: TStep,
+    data: BillingDataUpdate[TStep]
+  ) {
     this.billingData[stepName] = Object.assign({}, data);
   }
 
+  // Toggle the billing type (isYearly) between true and false.
   changeBillingType() {
     this.billingData.isYearly = !this.billingData.isYearly;
   }
 }
-//data 寫在同一個裡面

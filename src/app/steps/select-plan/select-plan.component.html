@@ -6,7 +6,7 @@
   <div
     class="plan-option"
     *ngFor="let plan of planData; let index = index"
-    (click)="select(index)"
+    (click)="selectOrDeselectPlan(index)"
     [class.selected]="formDataService.getBillingData().plan.type === plan.type"
   >
     <img
@@ -37,5 +37,12 @@
   </label>
   <p [class.active]="formDataService.getBillingData().isYearly">Yearly</p>
 </div>
-<button class="next-button" (click)="save()" [disabled]="!formDataService.getBillingData().plan.type">Next Step</button>
-<button class="previous-button" (click)="back()">Go Back</button>
+<button
+  class="next-button"
+  (click)="goToNextStep()"
+  [disabled]="!formDataService.getBillingData().plan.type"
+>
+  Next Step
+</button>
+<button class="previous-button" (click)="goToPreviousStep()">Go Back</button>
+

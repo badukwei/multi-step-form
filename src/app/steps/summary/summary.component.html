@@ -15,7 +15,7 @@
         }}
       </p>
     </div>
-    <div class="add-on-items" *ngFor="let item of addOns">
+    <div class="add-on-items" *ngFor="let item of selectedAddOns">
       <p>{{ item.name }}</p>
       <p class="price-tag">
         ${{
@@ -33,5 +33,5 @@
     </p>
   </div>
 </div>
-<button class="previous-button" (click)="back()">Go Back</button>
-<button class="submit-button" (click)="submit()">Submit</button>
+<button class="previous-button" (click)="goToPreviousStep()">Go Back</button>
+<button class="submit-button" (click)="submitFormData()">Submit</button>

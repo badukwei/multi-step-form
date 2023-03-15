@@ -1,32 +1,27 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'my-app';
+
+  // Track the current step of the multi-step form
   step = 1;
 
-
-  //設計表單
-  //問題:資料傳遞(component)、年月計算
-  //方案一:建立一個data-service，方案二:用child就好，方案三:直接全寫在app.component裡面
-
-  constructor(private formBuilder: FormBuilder) {}
-
-  ngOnInit(): void {
-
-  }
-
-  nextStep() {
+  /**
+   * Navigate to the next step in the form.
+   */
+  onNext() {
     this.step++;
   }
 
-  previousStep() {
+  /**
+   * Navigate to the previous step in the form.
+   */
+  onPrevious() {
     return this.step--;
   }
-
 }

@@ -6,7 +6,7 @@
   <div
     class="add-on-option"
     *ngFor="let addOn of formDataService.getBillingData().addOns; let index = index"
-    (click)="checkAddOn(index)"
+    (click)="toggleAddOnSelection(index)"
     [class.active]="this.formDataService.getBillingData().addOns[index].isAdded"
   >
     <div
@@ -34,5 +34,5 @@
     <p>+{{ formDataService.getBillingData().isYearly? addOn.price * 10 : addOn.price }}$/{{ formDataService.getBillingData().isYearly? 'yr' : 'mo' }}</p>
   </div>
 </div>
-<button class="next-button" (click)="save()">Next Step</button>
-<button class="previous-button" (click)="back()">Go Back</button>
+<button class="next-button" (click)="goToNextStep()">Next Step</button>
+<button class="previous-button" (click)="goToPreviousStep()">Go Back</button>

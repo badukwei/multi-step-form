@@ -4,8 +4,15 @@
 </div>
 <form [formGroup]="infoForm" class="info form">
   <div class="info-box">
-    <label>Name</label>
-    <p *ngIf="infoForm.controls['name'].errors?.['required']">Name is required</p>
+    <div class="text-box">
+      <label>Name</label>
+      <p
+        *ngIf="infoForm.controls['name'].errors?.['required'] && infoForm.controls['name'].touched"
+        class=""
+      >
+        Name is required
+      </p>
+    </div>
     <input
       [class.invalid]="
         infoForm.controls['name'].errors && infoForm.controls['name'].touched
@@ -14,7 +21,14 @@
     />
   </div>
   <div class="info-box">
-    <label>Email Address</label>
+    <div class="text-box">
+      <label>Email Address</label>
+      <p
+        *ngIf="infoForm.controls['email'].errors?.['required'] && infoForm.controls['email'].touched"
+      >
+        Email is required
+      </p>
+    </div>
     <input
       [class.invalid]="
         infoForm.controls['email'].errors && infoForm.controls['email'].touched
@@ -23,7 +37,14 @@
     />
   </div>
   <div class="info-box">
-    <label>Phone Number</label>
+    <div class="text-box">
+      <label>Phone Number</label>
+      <p
+        *ngIf="infoForm.controls['phone'].errors?.['required'] && infoForm.controls['phone'].touched"
+      >
+        Name is required
+      </p>
+    </div>
     <input
       [class.invalid]="
         infoForm.controls['phone'].errors && infoForm.controls['phone'].touched
@@ -32,6 +53,6 @@
     />
   </div>
 </form>
-<button class="next-button" (click)="save()" [disabled]="infoForm.invalid">
+<button class="next-button" (click)="goToNextStep()" [disabled]="infoForm.invalid">
   Next Step
 </button>
