@@ -1,4 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+// Import SCSS files
+@import './variables';
+@import './typography';
+@import './buttons';
+@import './animations';
+
+// Global styles
 @font-face {
   font-family: Ubuntu-Bold;
   src: url(./assets/fonts/Ubuntu-Bold.ttf);
@@ -26,107 +32,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background-color: hsl(217, 100%, 97%);
-}
-
-//Variables
-$marineBlue: hsl(213, 96%, 18%);
-$purplishBlue: hsl(243, 100%, 62%);
-$pastelBlue: hsl(228, 100%, 84%);
-$lightBlue: hsl(206, 94%, 87%);
-$strawberryRed: hsl(354, 84%, 57%);
-
-$coolGray: hsl(231, 11%, 63%);
-$lightGray: hsl(229, 24%, 87%);
-$magnolia: hsl(217, 100%, 97%);
-$alabaster: hsl(231, 100%, 99%);
-$white: hsl(0, 0%, 100%);
-
-.text {
-
-  h1 {
-    font-family: Ubuntu-Bold;
-    margin: 16px 0px;
-  }
-
-  p {
-    font-family: Ubuntu-Regular;
-    color: hsl(231, 11%, 63%);
-    margin: 0;
-  }
-}
-
-form, .form {
-  margin-top: 32px;
-}
-
-.next-button {
-  font-family: Ubuntu-Bold;
-  padding: 12px 18px;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  outline: none;
-  border: none;
-  background-color: hsl(213, 96%, 18%);
-  color: hsl(229, 24%, 87%);
-  border-radius: 8px;
-  transition: all .4s ease-in-out;
-
-  &:hover {
-    cursor: pointer;
-    background-color: hsl(231, 11%, 63%);
-  }
-}
-
-.previous-button {
-  font-family: Ubuntu-Bold;
-  padding: 12px 0px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  outline: none;
-  border: none;
-  background-color: white;
-  color: hsl(231, 11%, 63%);
-  border-radius: 8px;
-  transition: all .4s ease-in-out;
-
-  &:hover {
-    cursor: pointer;
-    color: hsl(213, 96%, 18%);
-  }
-}
-
-.submit-button {
-  font-family: Ubuntu-Bold;
-  padding: 12px 18px;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  outline: none;
-  border: none;
-  background-color: hsl(243, 100%, 62%);
-  color: hsl(229, 24%, 87%);
-  border-radius: 8px;
-  transition: all .4s ease-in-out;
-
-  &:hover {
-    cursor: pointer;
-    background-color: hsl(354, 84%, 57%);
-  }
+  background-color: $magnolia;
 }
 
 
-@keyframes fade-in {
-  from {
-  opacity: 0;
-  }
-  to {
-  opacity: 1;
-  }
-}
-
-.element {
-  animation: fade-in 1s ease-in;
-}

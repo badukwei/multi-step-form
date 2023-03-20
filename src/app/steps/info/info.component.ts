@@ -41,3 +41,5 @@ export class InfoComponent implements OnInit {
     this.next.emit();
   }
 }
+
+

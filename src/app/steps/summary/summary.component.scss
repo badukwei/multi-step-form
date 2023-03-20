@@ -5,12 +5,13 @@
     font-size: 14px;
     color: hsl(231, 11%, 63%);
   }
-  .billing-summary {
+
+  &__billing {
     padding: 24px;
     background-color: hsl(217deg, 100%, 97%);
     border-radius: 8px;
 
-    .plan-selected {
+    &__plan {
       padding-bottom: 20px;
       display: flex;
       justify-content: space-between;
@@ -21,7 +22,7 @@
         margin: 0px;
       }
 
-      .plan-selected-text {
+      &-text {
         a {
           text-decoration: underline;
           cursor: pointer;
@@ -35,7 +36,7 @@
       }
     }
 
-    .add-on-items {
+    &__addon {
       padding-top: 20px;
       display: flex;
       justify-content: space-between;
@@ -45,14 +46,14 @@
         margin: 0px;
       }
 
-      .price-tag {
+      &__price {
         font-family: Ubuntu-Medium;
         color: hsl(213, 96%, 18%);
       }
     }
   }
 
-  .price-summary {
+  &__price {
     padding: 32px 24px;
     display: flex;
     justify-content: space-between;
@@ -62,10 +63,12 @@
       margin: 0px;
     }
 
-    .price-tag {
+    &__tag {
       font-family: Ubuntu-Bold;
       color: hsl(243, 100%, 62%);
       font-size: 18px;
     }
   }
 }
+
+

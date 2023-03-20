@@ -43,8 +43,8 @@ export class FormDataService {
    * Return the current billing data.
    * @returns {BillingData} The current billing data object.
    */
-  getBillingData() {
-    return this.billingData;
+  getBillingData(): BillingData {
+    return { ...this.billingData };
   }
 
   /**
@@ -60,8 +60,12 @@ export class FormDataService {
     this.billingData[stepName] = Object.assign({}, data);
   }
 
-  // Toggle the billing type (isYearly) between true and false.
+  /**
+   * Toggle the billing type (isYearly) between true and false.
+   */
   changeBillingType() {
     this.billingData.isYearly = !this.billingData.isYearly;
   }
 }
+
+// get資料的時候需要用 return，更新資料的時候不需要 return，做資料運算的時候需要。

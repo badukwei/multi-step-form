@@ -2,21 +2,22 @@
   <h1>Select your plan</h1>
   <p>You have the option of monthly or yearly billing</p>
 </div>
-<div class="form plan">
+<div class="form plan-selector">
   <div
-    class="plan-option"
+    class="plan-selector__option"
     *ngFor="let plan of planData; let index = index"
     (click)="selectOrDeselectPlan(index)"
-    [class.selected]="formDataService.getBillingData().plan.type === plan.type"
+    [class.plan-selector__option--selected]="
+      formDataService.getBillingData().plan.type === plan.type
+    "
   >
     <img
       src="../../assets/images/icon-{{
         plan.type.charAt(0).toLowerCase() + plan.type.slice(1)
       }}.svg"
       alt="{{ plan.type }}"
-      class="plan-img"
     />
-    <div class="plan-text">
+    <div class="plan-selector__option__text">
       <h3>{{ plan.type }}</h3>
       <p>${{ plan.price }}/mo</p>
       <p class="discount" *ngIf="formDataService.getBillingData().isYearly">
@@ -45,4 +46,3 @@
   Next Step
 </button>
 <button class="previous-button" (click)="goToPreviousStep()">Go Back</button>
-

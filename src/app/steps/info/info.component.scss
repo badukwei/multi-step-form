@@ -1,7 +1,8 @@
-.info {
+@import "../../../variables";
 
+.user-info {
   .info-box {
-    margin: 16px 0px;
+    margin: $spacing-medium 0px;
     display: flex;
     flex-direction: column;
 
@@ -11,46 +12,45 @@
       align-items: center;
 
       label {
-        font-size: small;
-        margin: 8px 0px;
+        margin: $spacing-small 0px;
+        font-size: $font-size-small;
       }
 
       p {
         margin: 0;
-        color: hsl(354, 84%, 57%);
-        font-size: 14px;
+        color: $strawberryRed;
       }
     }
 
     input {
       width: 100%;
-      padding: 12px;
-      color: hsl(213, 96%, 18%);
-      font-family: Ubuntu-Medium;
-      font-size: 16px;
+      padding: $spacing-medium-small;
+      color: $marineBlue;
+      font-family: $font-family-medium;
+      font-size: $font-size-medium;
       outline: none;
-      border-radius: 8px;
-      border: 1px solid hsl(229, 24%, 87%);
+      border-radius: $border-radius-medium;
+      border: 1px solid $lightGray;
 
       &:focus {
-        border: 1px solid hsl(243, 100%, 62%);
+        border: 1px solid $purplishBlue;
       }
 
       &.invalid {
-        border: 1px solid hsl(354, 84%, 57%);
+        border: 1px solid $strawberryRed;
       }
     }
   }
 
   .next-button {
-    padding: 12px 18px;
+    padding: $spacing-medium-small $spacing-medium-large;
     position: absolute;
     bottom: 0;
     right: 0;
     outline: none;
-    background-color: hsl(213, 96%, 18%);
-    color: hsl(229, 24%, 87%);
-    border-radius: 8px;
+    background-color: $marineBlue;
+    color: $lightGray;
+    border-radius: $border-radius-medium;
 
     &:hover {
       cursor: pointer;

@@ -1,6 +1,6 @@
-<div class="main-container">
+<div class="subscription-container">
   <app-layout [step]="step"></app-layout>
-  <div class="form-container">
+  <div class="steps-container">
     <app-info *ngIf="step === 1" (next)="onNext()"></app-info>
     <app-select-plan
       *ngIf="step === 2"

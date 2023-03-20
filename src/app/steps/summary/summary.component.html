@@ -2,10 +2,10 @@
   <h1>Finishing up</h1>
   <p>Double-check everything looks OK before confirming</p>
 </div>
-<div class="form summary">
-  <div class="billing-summary">
-    <div class="plan-selected">
-      <div class="plan-selected-text">
+<div class="summary">
+  <div class="summary__billing">
+    <div class="summary__billing__plan">
+      <div class="summary__billing__plan-text">
         <h3>{{formDataService.getBillingData().plan.type}}</h3>
         <a (click)="formDataService.changeBillingType()">Change</a>
       </div>
@@ -15,18 +15,18 @@
         }}
       </p>
     </div>
-    <div class="add-on-items" *ngFor="let item of selectedAddOns">
+    <div class="summary__billing__addon" *ngFor="let item of selectedAddOns">
       <p>{{ item.name }}</p>
-      <p class="price-tag">
+      <p class="summary__billing__addon__price">
         ${{
           formDataService.getBillingData().isYearly ? item.price * 10 : item.price
         }}/{{ this.formDataService.getBillingData().isYearly ? "yr" : "mo" }}
       </p>
     </div>
   </div>
-  <div class="price-summary">
+  <div class="summary__price">
     <p>Total <span>(per month)</span></p>
-    <p class="price-tag">
+    <p class="summary__price__tag">
       ${{ formDataService.getBillingData().isYearly ? countTotalPrice() * 10 : countTotalPrice() }}/{{
         formDataService.getBillingData().isYearly ? "yr" : "mo"
       }}

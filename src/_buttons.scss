@@ -1,0 +1,48 @@
+// Button styles mixin
+@mixin button-styles {
+  font-family: $font-family-Bold;
+  padding: 12px 18px;
+  position: absolute;
+  bottom: 0;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.4s ease-in-out;
+}
+
+// Button classes
+.next-button {
+  @include button-styles;
+  right: 0;
+  background-color: $marineBlue;
+  color: $lightGray;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $coolGray;
+  }
+}
+
+.previous-button {
+  @include button-styles;
+  left: 0;
+  background-color: $white;
+  color: $coolGray;
+
+  &:hover {
+    cursor: pointer;
+    color: $marineBlue;
+  }
+}
+
+.submit-button {
+  @include button-styles;
+  right: 0;
+  background-color: $purplishBlue;
+  color: $lightGray;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $strawberryRed;
+  }
+}

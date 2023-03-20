@@ -7,7 +7,7 @@ import { FormDataService } from 'src/app/service/form-data.service';
 @Component({
   selector: 'app-summary',
   templateUrl: './summary.component.html',
-  styleUrls: ['./summary.component.scss']
+  styleUrls: ['./summary.component.scss'],
 })
 export class SummaryComponent {
   // An output event emitter for the next step in the form.
@@ -18,24 +18,22 @@ export class SummaryComponent {
   /**
    * An array of added add-ons.
    */
-  selectedAddOns = this.formDataService.getBillingData().addOns.filter(item => item.isAdded);
+  selectedAddOns = this.formDataService
+    .getBillingData()
+    .addOns.filter((item) => item.isAdded);
 
-  constructor(
-    public formDataService: FormDataService
-  ) {
-    console.log(this.selectedAddOns)
-  }
+  constructor(public formDataService: FormDataService) {}
 
   /**
    * Calculate the total price of the selected plan and added add-ons.
    * @returns {number} The total price.
    */
   countTotalPrice() {
-    const planPrice = this.formDataService.getBillingData().plan.price
+    const planPrice = this.formDataService.getBillingData().plan.price;
     const addOnPrice = this.selectedAddOns.reduce((sum, addOn) => {
-      return sum + addOn.price
-    }, 0)
-    return planPrice + addOnPrice
+      return sum + addOn.price;
+    }, 0);
+    return planPrice + addOnPrice;
   }
 
   /**

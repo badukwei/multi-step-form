@@ -1,51 +1,53 @@
-.add-ons {
+@import "../../../variables";
+
+.addon-selector {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: $spacing-medium;
 
-  .add-on-option {
+  &__option {
     padding: 20px;
     display: flex;
     align-items: center;
-    gap: 20px;
-    border: 1px solid hsl(229, 24%, 87%);
-    border-radius: 8px;
+    gap: $spacing-medium-large;
+    border: 1px solid $lightGray;
+    border-radius: $border-radius-medium;
     cursor: pointer;
 
-    &.active, &:hover {
-      background-color: hsl(217, 100%, 97%);
-      border-color: hsl(243, 100%, 62%);
+    &--active,
+    &:hover {
+      background-color: $magnolia;
+      border-color: $purplishBlue;
     }
 
-    .add-on-img {
+    &__img {
       padding: 1px 4px;
-      border: 1px solid hsl(229, 24%, 87%);
+      border: 1px solid $lightGray;
       border-radius: 5px;
 
-      &.active {
-        background-color: hsl(243, 100%, 62%);
+      &--active {
+        background-color: $purplishBlue;
       }
     }
 
-    .add-on-text {
+    &__text {
       margin: 0 auto 0 0;
 
       * {
-        font-family: Ubuntu-Medium;
         margin: 0;
-        font-size: 14px;
+        font-size: $font-size-medium;
       }
 
-      p {
-        color: hsl(231, 11%, 63%);
+      .description {
+        margin-top: 5px;
+        color: $coolGray;
+        font-size: $font-size-small;
       }
     }
 
     p {
-      font-family: Ubuntu-Medium;
       margin: 0;
-      font-size: 14px;
-      color: hsl(243, 100%, 62%);
+      color: $purplishBlue;
     }
   }
 }

@@ -2,7 +2,7 @@
   <h1>Personal info</h1>
   <p>Please provide your name, email address, and phone number</p>
 </div>
-<form [formGroup]="infoForm" class="info form">
+<form [formGroup]="infoForm" class="user-info form">
   <div class="info-box">
     <div class="text-box">
       <label>Name</label>
@@ -42,7 +42,7 @@
       <p
         *ngIf="infoForm.controls['phone'].errors?.['required'] && infoForm.controls['phone'].touched"
       >
-        Name is required
+        Phone Number is required
       </p>
     </div>
     <input

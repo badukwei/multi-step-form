@@ -9,7 +9,7 @@ export class AppComponent {
   title = 'my-app';
 
   // Track the current step of the multi-step form
-  step = 1;
+  step = 3;
 
   /**
    * Navigate to the next step in the form.
@@ -22,6 +22,6 @@ export class AppComponent {
    * Navigate to the previous step in the form.
    */
   onPrevious() {
-    return this.step--;
+    this.step--;
   }
 }

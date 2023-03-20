@@ -2,16 +2,23 @@
   <h1>Pick add-ons</h1>
   <p>Add-ons help enhance your gaming experience</p>
 </div>
-<div class="form add-ons">
+<div class="form addon-selector">
   <div
-    class="add-on-option"
-    *ngFor="let addOn of formDataService.getBillingData().addOns; let index = index"
+    class="addon-selector__option"
+    *ngFor="
+      let addOn of formDataService.getBillingData().addOns;
+      let index = index
+    "
     (click)="toggleAddOnSelection(index)"
-    [class.active]="this.formDataService.getBillingData().addOns[index].isAdded"
+    [class.addon-selector__option--active]="
+      this.formDataService.getBillingData().addOns[index].isAdded
+    "
   >
     <div
-      class="add-on-img"
-      [class.active]="this.formDataService.getBillingData().addOns[index].isAdded"
+      class="addon-selector__option__img"
+      [class.addon-selector__option__img--active]="
+        this.formDataService.getBillingData().addOns[index].isAdded
+      "
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -27,11 +34,17 @@
         />
       </svg>
     </div>
-    <div class="add-on-text">
+    <div class="addon-selector__option__text">
       <h3>{{ addOn.name }}</h3>
-      <p>{{ addOn.description }}</p>
+      <p class="description">{{ addOn.description }}</p>
     </div>
-    <p>+{{ formDataService.getBillingData().isYearly? addOn.price * 10 : addOn.price }}$/{{ formDataService.getBillingData().isYearly? 'yr' : 'mo' }}</p>
+    <p>
+      +{{
+        formDataService.getBillingData().isYearly
+          ? addOn.price * 10
+          : addOn.price
+      }}$/{{ formDataService.getBillingData().isYearly ? "yr" : "mo" }}
+    </p>
   </div>
 </div>
 <button class="next-button" (click)="goToNextStep()">Next Step</button>
